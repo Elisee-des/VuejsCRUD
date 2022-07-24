@@ -39,10 +39,10 @@
 			</nav>
 
 			<main class="container">
-				<div class="bg-light p-5 rounded" v-if="showHome" >
+				<div class="bg-light p-5 rounded" v-if="showHome">
 					<h1>CRUD Manager</h1>
 					<p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll,
-																	                it will remain fixed to the top of your browser’s viewport.</p>
+																													                it will remain fixed to the top of your browser’s viewport.</p>
 				</div>
 
 				<div class="row mt-5" v-if="showCreateFrom || showStudentsList">
@@ -54,22 +54,22 @@
 									<div class="d-flex mb-2">
 										<h5 class="card-title flex-grow-1">Formulaire de création de nouvel étudiant</h5>
 									</div>
-									<form class="row g-3">
+									<form class="row g-3" @submit.prevent="submitStudent">
 										<div class="col-6">
 											<label for="inputName" class="form-label">Nom(s)</label>
-											<input required type="text" class="form-control" id="inputName">
+											<input v-model="newStudent.nom" required type="text" class="form-control" id="inputName">
 										</div>
 										<div class="col-6">
 											<label for="inputFirstname" class="form-label">Prénom(s)</label>
-											<input required type="text" class="form-control" id="inputFirstname">
+											<input v-model="newStudent.prenom" required type="text" class="form-control" id="inputFirstname">
 										</div>
 										<div class="col-6">
 											<label for="inputDatenaissance" class="form-label">Date de naissance</label>
-											<input required type="date" class="form-control" id="inputDatenaissance">
+											<input v-model="newStudent.dateNaissance" required type="date" class="form-control" id="inputDatenaissance">
 										</div>
 										<div class="col-6">
 											<label for="selectNiveauScolaire" class="form-label">Niveau scolaire</label>
-											<select required id="selectNiveauScolaire" class="form-select">
+											<select v-model="newStudent.niveauEtude" required id="selectNiveauScolaire" class="form-select">
 												<option value=""></option>
 												<option value="Terminal A">Terminal A</option>
 												<option value="Terminal D">Terminal D</option>
@@ -143,10 +143,10 @@
 		</div>
 
 		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js" integrity="sha512-pWCMlLqWPfRQz669NdwWZL243IK+6w+Vkt6pjiyR4TmVMy8isXg8vAvZW0UMZGIJJyoXChig3vMGL+2Xzr0INw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="assets/js/jquery.min.js"></script>
-
 		<script src="https://unpkg.com/vue@next"></script>
-
+		<script src="js/api.js"></script>
 		<script src="js/app.js"></script>
 
 	</body>

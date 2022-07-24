@@ -72,3 +72,17 @@ function searcheStudent() {
 
   return filterDB;
 }
+
+//Verifiaction Enregistrement
+//Recherche Etudiant
+function checkIfStudentExist(nam, firstname) {
+  const db = getLocalDB();
+  const filterDB = db.filter((data) => {
+    return (
+      data.nom.toLowerCase() == name.toLowerCase() &&
+      data.prenom.toLowerCase() == firstname.toLowerCase()
+    );
+  });
+
+  return filterDB.length > 0;
+}
