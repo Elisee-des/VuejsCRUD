@@ -6,7 +6,7 @@ const App = {
       showStudentsList: false,
     };
   },
-
+ 
   mounted() {
     this.changeNavigationState("home");
   },
